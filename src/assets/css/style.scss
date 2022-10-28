@@ -1,0 +1,37 @@
+* {
+    margin: 0 auto;
+    color: white;
+}
+
+.site-layout-background {
+    padding: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #3333ff 0%, #6699ff 100%);
+    height: calc(100vh - 10rem);
+    box-shadow: 2px 2px 10px rgb(99, 99, 99);
+    width: 50vw;
+}
+
+.ant-row {
+    align-items: center !important;
+}
+.search-icon > svg {
+    color: white;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.ant-col-2 {
+    margin-left: 0;
+}
+
+.weather-details > p {
+    margin-bottom: 0;
+}
+
+.forecast-text {
+    text-transform: uppercase;
+    border-bottom: solid 2px white;
+}
