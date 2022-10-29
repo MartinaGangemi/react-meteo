@@ -3,7 +3,6 @@ import React from 'react';
 import {SearchOutlined, EnvironmentOutlined} from '@ant-design/icons';
 import {Row, Col, Input, Button} from 'antd';
 
-//const onSearch = (value) => console.log(value);
 const Inputs = () => {
     return (
         <div className="mt-2">

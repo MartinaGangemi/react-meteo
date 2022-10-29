@@ -28,7 +28,7 @@ const Details = () => {
                 </Col>
             </Row>
 
-            {/* mancano le icone da mettere */}
+            {/* sistemare le icone */}
 
             <Row className="mt-2  align-center ">
                 <Col span={5}>
