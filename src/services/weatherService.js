@@ -1,6 +1,6 @@
 import {DateTime} from 'luxon';
 
-const API_KEY = '7f237406defed31937b7d1318c82d4af';
+const API_KEY = 'f76531c607ada2a619e33269a7bf007f';
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 const getWeatherData = (infoType, searchParams) => {
@@ -48,7 +48,7 @@ const deconstructCurrentWeather = (data) => {
 
 const formatForecastWeather = (data) => {
     return data.list
-        .splice(0, 15)
+        .slice(1, 36)
         .map((d) => {
             return {
                 title: formatToLocalTime(d.dt, d.timezone, 'ccc'),
@@ -57,25 +57,13 @@ const formatForecastWeather = (data) => {
                 icon: d.weather[0].icon,
             };
         })
-        .reduce((unique, item) => {
-            //let {id, day} = item;
-            return {
-                ...unique,
-                [item.title]: [
-                    ...(unique[item.title] || [
-                        item.weather,
-                        item.temp,
-                        item.icon,
-                    ]),
-                ],
-            };
-        }, {});
-
-    // const dayInaWeek = new Date().getDay();
-    // const forecastDays = weekDays
-    //     .slice(dayInaWeek, weekDays.length)
-    //     .concat(weekDays.slice(0, dayInaWeek));
-    // return forecastDays;
+        .filter(
+            (value, i, self) =>
+                i ===
+                self.findIndex(
+                    (t) => t.title === value.title && t.title === value.title,
+                ),
+        );
 };
 
 const getFormattedWeatherData = async (searchParams) => {
@@ -89,6 +77,7 @@ const getFormattedWeatherData = async (searchParams) => {
     const formattedForecastWeather = await getWeatherData('forecast', {
         lat,
         lon,
+        units: searchParams.units,
     }).then(formatForecastWeather);
 
     return {...formattedCurrentWeather, formattedForecastWeather};

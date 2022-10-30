@@ -8,7 +8,6 @@ import TimeAndLocation from './components/TimeAndLocation';
 import Details from './components/Details';
 import HourlyForecast from './components/HourlyForecast';
 import DailyForecast from './components/DailyForecast';
-
 import 'antd/dist/antd.css';
 import './assets/css/style.scss';
 import './assets/css/query.scss';
@@ -31,7 +30,7 @@ function App() {
                     <Inputs />
                     <TimeAndLocation />
                     <Details />
-                    <HourlyForecast />
+                    {/* <HourlyForecast /> */}
                     <DailyForecast />
                 </div>
             </Content>
