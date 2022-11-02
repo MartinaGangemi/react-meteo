@@ -1,38 +1,27 @@
 import React from 'react';
 
 import {Row, Col} from 'antd';
+import {iconUrlFromCode} from '../services/weatherService';
 
-const HourlyForecast = () => {
+const HourlyForecast = ({title, items, icon, temp}) => {
+    console.log(items);
     return (
         <div className="mt-2">
             <h4 className="text-white forecast-text">Daily Forecast</h4>
 
             <Row className="mt-2 align-center">
-                <Col span={4}>
-                    <p>04:30 PN</p>
-                    Icona
-                    <h4 className="text-white">22°</h4>
-                </Col>
-                <Col span={4}>
-                    <p>04:30 PN</p>
-                    Icona
-                    <h4 className="text-white">22°</h4>
-                </Col>
-                <Col span={4}>
-                    <p>04:30 PN</p>
-                    Icona
-                    <h4 className="text-white">22°</h4>
-                </Col>
-                <Col span={4}>
-                    <p>04:30 PN</p>
-                    Icona
-                    <h4 className="text-white">22°</h4>
-                </Col>
-                <Col span={4}>
-                    <p>04:30 PN</p>
-                    Icona
-                    <h4 className="text-white">22°</h4>
-                </Col>
+                {items.map((item, i) => (
+                    <Col key={i} span={4}>
+                        <h4 className="text-white text-uppercase">
+                            {item.title}
+                        </h4>
+                        <div className="icon-container">
+                            <img src={iconUrlFromCode(item.icon)} alt="" />
+                        </div>
+
+                        <h4 className="text-white">{`${item.temp.toFixed()}°`}</h4>
+                    </Col>
+                ))}
             </Row>
         </div>
     );

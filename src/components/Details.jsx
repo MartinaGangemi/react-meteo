@@ -2,28 +2,54 @@ import React from 'react';
 import {Row, Col} from 'antd';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faSun} from '@fortawesome/free-solid-svg-icons';
+import {
+    faSun,
+    faWind,
+    faDroplet,
+    faTemperature0,
+    faArrowUp,
+    faArrowDown,
+    faMoon,
+} from '@fortawesome/free-solid-svg-icons';
+import {formatToLocalTime, iconUrlFromCode} from '../services/weatherService';
 
-const Details = () => {
+const Details = ({
+    weather: {
+        description,
+        icon,
+        temp,
+        temp_min,
+        temp_max,
+        sunrise,
+        sunset,
+        humidity,
+        feels_like,
+        timezone,
+        speed,
+    },
+}) => {
     return (
         <div>
             <Row className="mt-2  align-center ">
-                <Col className="mb-2" span={24}>
-                    Soleggiato?
+                <Col span={24}>
+                    <h3 className="text-white">{description}</h3>
                 </Col>
-                <Col span={8}>Icona</Col>
                 <Col span={8}>
-                    <h2 className="text-white">34°</h2>
+                    <img src={iconUrlFromCode(icon)} alt="" />
+                </Col>
+                <Col span={8}>
+                    <h2 className="text-white">{`${temp.toFixed()}°`}</h2>
                 </Col>
                 <Col span={8} className="weather-details">
                     <p>
-                        Percepite <span></span>
+                        <FontAwesomeIcon icon={faTemperature0} />{' '}
+                        {`${feels_like.toFixed()}°`}
                     </p>
                     <p>
-                        Umidità <span></span>
+                        <FontAwesomeIcon icon={faDroplet} /> {humidity}%
                     </p>
                     <p>
-                        Vento <span></span>
+                        <FontAwesomeIcon icon={faWind} /> {speed}Km/h
                     </p>
                 </Col>
             </Row>
@@ -32,25 +58,29 @@ const Details = () => {
 
             <Row className="mt-2  align-center ">
                 <Col span={5}>
-                    <FontAwesomeIcon icon={faSun} /> Rise: <span>ora</span>
+                    <FontAwesomeIcon icon={faSun} /> Rise:{' '}
+                    {formatToLocalTime(sunrise, 'hh:mm a')}
                 </Col>
                 <Col className="text-light" span={1}>
                     |
                 </Col>
                 <Col span={5}>
-                    <FontAwesomeIcon icon={faSun} /> Set: <span>ora</span>
+                    <FontAwesomeIcon icon={faMoon} />
+                    Set: {formatToLocalTime(sunset, 'hh:mm a')}
                 </Col>
                 <Col className="text-light" span={1}>
                     |
                 </Col>
                 <Col span={5}>
-                    <FontAwesomeIcon icon={faSun} /> Hight: <span>ora</span>
+                    <FontAwesomeIcon icon={faArrowUp} />{' '}
+                    {`${temp_max.toFixed()}°`}
                 </Col>
                 <Col className="text-light" span={1}>
                     |
                 </Col>
                 <Col span={5}>
-                    <FontAwesomeIcon icon={faSun} /> Low: <span>ora</span>
+                    <FontAwesomeIcon icon={faArrowDown} />{' '}
+                    {`${temp_min.toFixed()}°`}
                 </Col>
             </Row>
         </div>

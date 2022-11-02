@@ -3,17 +3,23 @@
     color: white;
 }
 
+.ant-layout {
+    height: 100vh;
+}
 .site-layout-background {
-    padding: 2rem;
-    margin-top: 5rem;
-    margin-bottom: 4rem;
-    border-radius: 4px;
-    background: linear-gradient(to bottom, #3333ff 0%, #6699ff 100%);
-    height: calc(100vh - 8rem);
-    box-shadow: 2px 2px 10px rgb(99, 99, 99);
-    width: 50vw;
+    display: flex;
+    align-items: center;
+
+    width: 40%;
 }
 
+.container {
+    background: linear-gradient(to bottom, #3333ff 0%, #6699ff 100%);
+    padding: 2rem;
+    box-shadow: 2px 2px 10px rgb(99, 99, 99);
+    border-radius: 5px;
+    width: 100%;
+}
 .ant-row {
     align-items: center !important;
 }
@@ -34,4 +40,8 @@
 .forecast-text {
     text-transform: uppercase;
     border-bottom: solid 2px white;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
 }

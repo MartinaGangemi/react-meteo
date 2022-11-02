@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Row, Col} from 'antd';
 
-const TopButtons = () => {
+const TopButtons = ({setQuery}) => {
     const cities = [
         {
             id: 1,
@@ -17,7 +17,7 @@ const TopButtons = () => {
         },
         {
             id: 4,
-            title: 'Tokyo',
+            title: 'Paris',
         },
     ];
     return (
@@ -25,7 +25,11 @@ const TopButtons = () => {
             <Row gutter={[8, 8]}>
                 {cities.map((city, i) => (
                     <Col key={city.id} span={6}>
-                        <Button type="primary" block>
+                        <Button
+                            onClick={() => setQuery({q: city.title})}
+                            key={city.id}
+                            type="primary"
+                            block>
                             {city.title}
                         </Button>
                     </Col>
