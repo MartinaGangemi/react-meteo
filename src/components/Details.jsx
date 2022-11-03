@@ -65,8 +65,8 @@ const Details = ({
                     |
                 </Col>
                 <Col span={5}>
-                    <FontAwesomeIcon icon={faMoon} />
-                    Set: {formatToLocalTime(sunset, 'hh:mm a')}
+                    <FontAwesomeIcon icon={faMoon} /> Set:{' '}
+                    {formatToLocalTime(sunset, 'hh:mm a')}
                 </Col>
                 <Col className="text-light" span={1}>
                     |

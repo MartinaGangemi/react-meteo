@@ -87,6 +87,16 @@ const formatToLocalTime = (secs, format = 'ccc') =>
 const iconUrlFromCode = (code) =>
     `http://openweathermap.org/img/wn/${code}@2x.png`;
 
+const geoApiOptions = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '7517d745b8mshb48dcd8a8f181c5p156f09jsnce6e068a7a50',
+        'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com',
+    },
+};
+
+export const GEO_API_URL = 'https://wft-geo-db.p.rapidapi.com/v1/geo';
+
 export default getFormattedWeatherData;
 
-export {formatToLocalTime, iconUrlFromCode};
+export {formatToLocalTime, iconUrlFromCode, geoApiOptions};

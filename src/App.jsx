@@ -6,7 +6,6 @@ import TopButtons from './components/TopButtons';
 import Inputs from './components/Inputs';
 import TimeAndLocation from './components/TimeAndLocation';
 import Details from './components/Details';
-import HourlyForecast from './components/HourlyForecast';
 import DailyForecast from './components/DailyForecast';
 import 'antd/dist/antd.css';
 import './assets/css/style.scss';
@@ -29,19 +28,17 @@ function App() {
         fetchWeather();
     }, [query, units]);
 
-    console.log(weather);
     return (
         <Layout>
             <Content className="site-layout-background">
                 <div className="container">
                     <TopButtons setQuery={setQuery} />
-                    <Inputs setQuery={setQuery} />
+                    <Inputs query={query} setQuery={setQuery} />
 
                     {weather && (
                         <div>
                             <TimeAndLocation weather={weather} />
                             <Details weather={weather} />
-                            {/* <HourlyForecast /> */}
                             <DailyForecast items={weather.dailyForecast} />
                         </div>
                     )}
