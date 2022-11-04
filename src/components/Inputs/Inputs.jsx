@@ -5,11 +5,13 @@ import {useForm} from 'react-hook-form';
 const Inputs = ({setQuery}) => {
     const [city, setCity] = useState('');
 
-    const {handleSubmit, reset} = useForm();
+    const {handleSubmit} = useForm();
 
-    const handleSearchClick = () => {
+    const handleSearchClick = (e) => {
         if (city !== '') {
             setQuery({q: city});
+            setCity(' ');
+            removeItem(e.target);
         }
     };
 
@@ -19,6 +21,7 @@ const Inputs = ({setQuery}) => {
                 className="inputCity"
                 onChange={(e) => setCity(e.currentTarget.value)}
                 placeholder="Search for city..."
+                value={city}
             />
         </form>
     );

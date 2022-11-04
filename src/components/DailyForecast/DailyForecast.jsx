@@ -5,7 +5,6 @@ import {Row, Col} from 'antd';
 import {iconUrlFromCode} from '../../services/weatherService';
 
 const DailyForecast = ({title, items, icon, temp}) => {
-    console.log(items);
     return (
         <div className="mt-2">
             <h4 className="text-white forecast-text">Daily Forecast</h4>

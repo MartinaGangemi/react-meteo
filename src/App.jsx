@@ -8,7 +8,7 @@ import Details from './components/Details';
 import DailyForecast from './components/DailyForecast';
 import getFormattedWeatherData from './services/weatherService';
 
-import "./css/style.scss";
+import './css/style.scss';
 
 function App() {
     const [query, setQuery] = useState({q: 'berlin'});
