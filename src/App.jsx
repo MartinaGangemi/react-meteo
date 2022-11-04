@@ -1,17 +1,14 @@
 import {useState, useEffect} from 'react';
 import {Layout} from 'antd';
 const {Content} = Layout;
-
-import TopButtons from './components/TopButtons';
+import TopButtons from './components/TopButtons/TopButtons';
 import Inputs from './components/Inputs';
 import TimeAndLocation from './components/TimeAndLocation';
 import Details from './components/Details';
 import DailyForecast from './components/DailyForecast';
-import 'antd/dist/antd.css';
-import './assets/css/style.scss';
-import './assets/css/query.scss';
-import './assets/css/utilities.css';
 import getFormattedWeatherData from './services/weatherService';
+
+import "./css/style.scss";
 
 function App() {
     const [query, setQuery] = useState({q: 'berlin'});

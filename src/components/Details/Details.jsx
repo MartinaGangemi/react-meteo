@@ -1,5 +1,6 @@
 import React from 'react';
 import {Row, Col} from 'antd';
+import './Details.scss';
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {
@@ -11,7 +12,7 @@ import {
     faArrowDown,
     faMoon,
 } from '@fortawesome/free-solid-svg-icons';
-import {formatToLocalTime, iconUrlFromCode} from '../services/weatherService';
+import {formatToLocalTime, iconUrlFromCode} from '../../services/weatherService';
 
 const Details = ({
     weather: {
@@ -53,8 +54,6 @@ const Details = ({
                     </p>
                 </Col>
             </Row>
-
-            {/* sistemare le icone */}
 
             <Row className="mt-2  align-center ">
                 <Col span={5}>

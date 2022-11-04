@@ -1,7 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Input} from 'antd';
-import {GEO_API_URL, geoApiOptions} from '../services/weatherService';
-import {AsyncPaginate} from 'react-select-async-paginate';
 import {useForm} from 'react-hook-form';
 
 const Inputs = ({setQuery}) => {
@@ -19,7 +17,6 @@ const Inputs = ({setQuery}) => {
         <form onSubmit={handleSubmit(handleSearchClick)} className="mt-2">
             <Input
                 className="inputCity"
-                //onKeyPress={(e) => handleSearchClick(e)}
                 onChange={(e) => setCity(e.currentTarget.value)}
                 placeholder="Search for city..."
             />

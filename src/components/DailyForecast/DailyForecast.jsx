@@ -1,9 +1,10 @@
 import React from 'react';
+import './DailyForecast.scss';
 
 import {Row, Col} from 'antd';
-import {iconUrlFromCode} from '../services/weatherService';
+import {iconUrlFromCode} from '../../services/weatherService';
 
-const HourlyForecast = ({title, items, icon, temp}) => {
+const DailyForecast = ({title, items, icon, temp}) => {
     console.log(items);
     return (
         <div className="mt-2">
@@ -27,4 +28,4 @@ const HourlyForecast = ({title, items, icon, temp}) => {
     );
 };
 
-export default HourlyForecast;
+export default DailyForecast;

@@ -1,4 +1,3 @@
-import {faEarthEurope} from '@fortawesome/free-solid-svg-icons';
 import {DateTime} from 'luxon';
 
 const API_KEY = 'f76531c607ada2a619e33269a7bf007f';

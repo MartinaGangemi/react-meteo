@@ -1,12 +1,11 @@
 import React from 'react';
-
 import {Row, Col} from 'antd';
-import {formatToLocalTime} from '../services/weatherService';
-const TimeAndLocation = ({weather: {dt, name, country}}) => {
+
+const TimeAndLocation = ({weather: {name, country}}) => {
     return (
         <Row justify="center" className="mt-2 align-center ">
             <Col span={24}>
-                {/* da sistemare la timezone */}
+                {/* TODO: da sistemare la timezone */}
                 <h4 className="text-white">Today</h4>
             </Col>
             <Col span={24}>
