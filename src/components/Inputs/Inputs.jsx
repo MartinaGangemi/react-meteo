@@ -11,12 +11,11 @@ const Inputs = ({setQuery}) => {
         if (city !== '') {
             setQuery({q: city});
             setCity(' ');
-            removeItem(e.target);
         }
     };
 
     return (
-        <form onSubmit={handleSubmit(handleSearchClick)} className="mt-2">
+        <form onSubmit={handleSubmit(handleSearchClick)} className="mt-1">
             <Input
                 className="inputCity"
                 onChange={(e) => setCity(e.currentTarget.value)}

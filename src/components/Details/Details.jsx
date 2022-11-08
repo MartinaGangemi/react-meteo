@@ -12,7 +12,10 @@ import {
     faArrowDown,
     faMoon,
 } from '@fortawesome/free-solid-svg-icons';
-import {formatToLocalTime, iconUrlFromCode} from '../../services/weatherService';
+import {
+    formatToLocalTime,
+    iconUrlFromCode,
+} from '../../services/weatherService';
 
 const Details = ({
     weather: {
@@ -31,12 +34,14 @@ const Details = ({
 }) => {
     return (
         <div>
-            <Row className="mt-2  align-center ">
+            <Row className=" align-center ">
                 <Col span={24}>
                     <h3 className="text-white">{description}</h3>
                 </Col>
                 <Col span={8}>
-                    <img src={iconUrlFromCode(icon)} alt="" />
+                    <div className="icon-container">
+                        <img src={iconUrlFromCode(icon)} alt="" />
+                    </div>
                 </Col>
                 <Col span={8}>
                     <h2 className="text-white">{`${temp.toFixed()}°`}</h2>

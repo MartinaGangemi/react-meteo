@@ -3,7 +3,7 @@ import {Button, Row, Col} from 'antd';
 import './TopButtons.scss';
 
 const TopButtons = ({setQuery}) => {
-    const cities = ['Torino','Sidney','Tokyo','Paris'];
+    const cities = ['Torino', 'Sidney', 'Tokyo', 'Paris'];
 
     return (
         <div>

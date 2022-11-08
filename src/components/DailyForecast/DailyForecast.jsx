@@ -4,12 +4,12 @@ import './DailyForecast.scss';
 import {Row, Col} from 'antd';
 import {iconUrlFromCode} from '../../services/weatherService';
 
-const DailyForecast = ({title, items, icon, temp}) => {
+const DailyForecast = ({items}) => {
     return (
         <div className="mt-2">
             <h4 className="text-white forecast-text">Daily Forecast</h4>
 
-            <Row className="mt-2 align-center">
+            <Row className="mt-1 align-center">
                 {items.map((item, i) => (
                     <Col key={i} span={4}>
                         <h4 className="text-white text-uppercase">
